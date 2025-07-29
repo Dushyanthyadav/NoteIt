@@ -1,0 +1,113 @@
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #000;
+    --nav-bg: #52504f;
+    --nav-text: #ffffff;
+    --textarea-bg: #fff;
+    --textarea-border: #ccc;
+}
+
+body.dark {
+    --bg-color: #353434;
+    --text-color: #eee;
+    --nav-bg: #444141;
+    --nav-text: #fff;
+    --textarea-bg: #1f1f1f;
+    --textarea-border: #555;
+
+}
+
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+nav {
+    background-color: var(--nav-bg);
+    padding: 1rem;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    color: var(--nav-text);
+    display: flex;
+    align-items: center;
+    gap: 1;
+}
+
+
+nav ul li:first-child {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: auto;
+}
+
+nav ul li.brand {
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: auto;
+}
+
+nav ul li.brand img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+
+
+nav ul li img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.notepad {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    padding: 1rem;
+    transform: translateY(1rem);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.notepad textarea {
+    width: 80%;
+    height: 100%;
+    resize: none;
+    font-size:1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--textarea-border);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    background-color: var(--textarea-bg);
+    color: var(--text-color);
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    color: var(--nav-text);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+body, .notepad textarea, nav {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
