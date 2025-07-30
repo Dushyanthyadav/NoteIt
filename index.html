@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        window.__resolvedTheme = (function () {
+            const saved = localStorage.getItem("theme");
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = saved || (prefersDark ? "dark" : "light");
+
+            if (theme === "dark") {
+                document.documentElement.classList.add("dark");
+            }
+            return theme;
+        })();
+    </script>
+
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/web/icons8-notepad-parakeet-color-16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/web/icons8-notepad-parakeet-color-32.png">
 </head>
+
 <body>
     <Header>
         <nav class="Navigation">
@@ -20,14 +35,38 @@
                     <button id="theme-toggle">🌙</button>
                 </li>
                 <li><img src="icons/Settings.svg" alt="Setting Icon">Setting</li>
+                <li id="clear-note" title="Clear the note" style="cursor: pointer;">
+                    <img src="/icons/Clear Formatting.svg" alt="Clear Icon">Clear
+                </li>
                 <li><img src="icons/Stopwatch.svg" alt="Timer Icon">Timer</li>
-                <li><img src="icons/Downloading Updates.svg" alt="Download Icon">Download</li>
+                <li id="download-note" title="Download as .txt file" style="cursor: pointer;">
+                    <img src="icons/Downloading Updates.svg" alt="Download Icon">Download
+                </li>
             </ul>
         </nav>
     </Header>
     <div class="notepad">
-        <textarea placeholder="Write your notes here...."></textarea>
+        <textarea id="note-text" name="note" placeholder="Write your notes here...."></textarea>
+    </div>
+    <div id="confirm-modal" class="modal hidden">
+        <div class="modal-content">
+            <p>Are you sure you want to clear the note?</p>
+            <div class="modal-buttons">
+                <button id="confirm-clear">Yes, Clear</button>
+                <button id="cancel-clear">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div id="download-modal" class="modal hidden">
+        <div class="modal-content">
+            <p>Nothing to download. The note is empty!</p>
+            <div class="modal-buttons">
+                <button id="close-download-modal">OK</button>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
+
 </body>
+
 </html>

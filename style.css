@@ -7,7 +7,7 @@
     --textarea-border: #ccc;
 }
 
-body.dark {
+:root.dark {
     --bg-color: #353434;
     --text-color: #eee;
     --nav-bg: #444141;
@@ -51,6 +51,7 @@ nav ul li:first-child {
     font-weight: bold;
     font-size: 1.2rem;
     margin-right: auto;
+    cursor: default;
 }
 
 nav ul li.brand {
@@ -68,6 +69,14 @@ nav ul li.brand img {
     object-fit: contain;
 }
 
+nav ul li:not(:first-child):not(:has(button)):hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#theme-toggle {
+    cursor: pointer;
+}
 
 
 nav ul li img {
@@ -110,4 +119,53 @@ nav ul li img {
 
 body, .notepad textarea, nav {
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: opacity 0.3s ease;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: var(--textarea-bg);
+    color: var(--text-color);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    text-align: center;
+}
+
+.modal-buttons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.modal-buttons button {
+    padding: 0.5rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    transition: background-color 0.2s ease;
+}
+
+.modal-buttons button:hover {
+    background-color: #666;
 }
