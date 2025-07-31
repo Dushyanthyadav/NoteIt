@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoteIt - Only on Browser</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DM0DLV9GV1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-DM0DLV9GV1');
+    </script>
     <script>
         window.__resolvedTheme = (function () {
             const saved = localStorage.getItem("theme");
@@ -100,34 +109,40 @@
             </div>
         </div>
     </div>
-   <div id="about-modal" class="modal hidden">
-    <div class="modal-content">
-        <h2>About NoteIt</h2>
-        <p><strong>NoteIt</strong> is a minimalistic and privacy-focused notepad app. It helps you quickly write and manage notes with a clean and distraction-free interface.</p>
-        
-        <ul style="text-align: left; margin-top: 1rem;">
-            <li>🌙 Theme toggle for light/dark mode</li>
-            <li>⏰ Built-in countdown timer with alerts</li>
-            <li>🧹 One-click clear notes with confirmation</li>
-            <li>📥 Export notes as .txt files easily</li>
-            <li>🔐 <strong>Privacy-focused</strong>: All your notes are stored only in your browser using local storage</li>
-        </ul>
+    <div id="about-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>About NoteIt</h2>
+            <p><strong>NoteIt</strong> is a minimalistic and privacy-focused notepad app. It helps you quickly write and
+                manage notes with a clean and distraction-free interface.</p>
 
-        <p style="margin-top: 1rem; color: #e53935;"><strong>⚠️ Important:</strong> Since data is stored locally in your browser, it can be lost if you clear your browser data or cache. Please make frequent backups using the download option.</p>
-        
-        <p style="margin-top: 1rem;">Made with ❤️ by <strong>Dushyanth</strong>, a student and aspiring developer.</p>
-        
-        <p>
-            🔗 <a href="https://github.com/Dushyanthyadav/NoteIt" target="_blank" style="color: var(--text-color); text-decoration: underline;">
-                GitHub Repository
-            </a>
-        </p>
-        
-        <div class="modal-buttons">
-            <button id="close-about-modal">Close</button>
+            <ul style="text-align: left; margin-top: 1rem;">
+                <li>🌙 Theme toggle for light/dark mode</li>
+                <li>⏰ Built-in countdown timer with alerts</li>
+                <li>🧹 One-click clear notes with confirmation</li>
+                <li>📥 Export notes as .txt files easily</li>
+                <li>🔐 <strong>Privacy-focused</strong>: All your notes are stored only in your browser using local
+                    storage</li>
+            </ul>
+
+            <p style="margin-top: 1rem; color: #e53935;"><strong>⚠️ Important:</strong> Since data is stored locally in
+                your browser, it can be lost if you clear your browser data or cache. Please make frequent backups using
+                the download option.</p>
+
+            <p style="margin-top: 1rem;">Made with ❤️ by <strong>Dushyanth</strong>, a student and aspiring developer.
+            </p>
+
+            <p>
+                🔗 <a href="https://github.com/Dushyanthyadav/NoteIt" target="_blank"
+                    style="color: var(--text-color); text-decoration: underline;">
+                    GitHub Repository
+                </a>
+            </p>
+
+            <div class="modal-buttons">
+                <button id="close-about-modal">Close</button>
+            </div>
         </div>
     </div>
-</div>
 
 
 
