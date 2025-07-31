@@ -38,7 +38,14 @@
                 <li id="clear-note" title="Clear the note" style="cursor: pointer;">
                     <img src="/icons/Clear Formatting.svg" alt="Clear Icon">Clear
                 </li>
-                <li><img src="icons/Stopwatch.svg" alt="Timer Icon">Timer</li>
+                <li id="timer" class="Timer-dropdown"><img src="icons/Stopwatch.svg" alt="Timer Icon">Timer
+                    <div class="menu-box" id="timer-menu">
+                        <div class="menu-item" data-minutes="15">15 Minutes</div>
+                        <div class="menu-item" data-minutes="30">30 Minutes</div>
+                        <div class="menu-item" data-minutes="60">60 Minutes</div>
+                        <div class="menu-item">Custom</div>
+                    </div>
+                </li>
                 <li id="download-note" title="Download as .txt file" style="cursor: pointer;">
                     <img src="icons/Downloading Updates.svg" alt="Download Icon">Download
                 </li>
