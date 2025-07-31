@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <Header>
+    <header>
         <nav class="Navigation">
             <ul>
                 <li class="brand">
@@ -34,26 +34,35 @@
                 <li>
                     <button id="theme-toggle">🌙</button>
                 </li>
-                <li><img src="icons/Settings.svg" alt="Setting Icon">Setting</li>
+                <!-- <li><img src="icons/Settings.svg" alt="Setting Icon">Setting</li> -->
                 <li id="clear-note" title="Clear the note" style="cursor: pointer;">
                     <img src="/icons/Clear Formatting.svg" alt="Clear Icon">Clear
                 </li>
                 <li id="timer" class="Timer-dropdown"><img src="icons/Stopwatch.svg" alt="Timer Icon">Timer
                     <div class="menu-box" id="timer-menu">
-                        <div class="menu-item" data-minutes="15">15 Minutes</div>
-                        <div class="menu-item" data-minutes="30">30 Minutes</div>
-                        <div class="menu-item" data-minutes="60">60 Minutes</div>
-                        <div class="menu-item">Custom</div>
+                        <div id="15mintues" class="menu-item" data-minutes="15">15 Minutes</div>
+                        <div id="30mintues" class="menu-item" data-minutes="30">30 Minutes</div>
+                        <div id="60mintues" class="menu-item" data-minutes="60">60 Minutes</div>
+                        <div id="Custom-timer" class="menu-item">Custom</div>
                     </div>
                 </li>
                 <li id="download-note" title="Download as .txt file" style="cursor: pointer;">
                     <img src="icons/Downloading Updates.svg" alt="Download Icon">Download
                 </li>
+                <li id="about">
+                    <img src="icons/Info.svg" alt="info Logo">About
+                </li>
             </ul>
         </nav>
-    </Header>
+    </header>
     <div class="notepad">
         <textarea id="note-text" name="note" placeholder="Write your notes here...."></textarea>
+        <div class="timer_with_icon">
+            <div class="timer-countdown">
+                <p>00:00</p>
+                <img id="cancelIcon" src="icons/Cancel.svg" alt="Cancel Icon">
+            </div>
+        </div>
     </div>
     <div id="confirm-modal" class="modal hidden">
         <div class="modal-content">
@@ -72,6 +81,56 @@
             </div>
         </div>
     </div>
+    <div id="custom-timer-modal" class="modal hidden">
+        <div class="modal-content">
+            <div id="timer-text-area">
+                <textarea name="set-timer-textarea" id="timer-textarea"></textarea>
+                <p>Mins</p>
+            </div>
+            <div class="modal-buttons">
+                <button id="confirm-time">OK</button>
+            </div>
+        </div>
+    </div>
+    <div id="time-up-modal" class="modal hidden">
+        <div class="modal-content">
+            <p>⏰ Time's up!</p>
+            <div class="modal-buttons">
+                <button id="close-time-up">OK</button>
+            </div>
+        </div>
+    </div>
+   <div id="about-modal" class="modal hidden">
+    <div class="modal-content">
+        <h2>About NoteIt</h2>
+        <p><strong>NoteIt</strong> is a minimalistic and privacy-focused notepad app. It helps you quickly write and manage notes with a clean and distraction-free interface.</p>
+        
+        <ul style="text-align: left; margin-top: 1rem;">
+            <li>🌙 Theme toggle for light/dark mode</li>
+            <li>⏰ Built-in countdown timer with alerts</li>
+            <li>🧹 One-click clear notes with confirmation</li>
+            <li>📥 Export notes as .txt files easily</li>
+            <li>🔐 <strong>Privacy-focused</strong>: All your notes are stored only in your browser using local storage</li>
+        </ul>
+
+        <p style="margin-top: 1rem; color: #e53935;"><strong>⚠️ Important:</strong> Since data is stored locally in your browser, it can be lost if you clear your browser data or cache. Please make frequent backups using the download option.</p>
+        
+        <p style="margin-top: 1rem;">Made with ❤️ by <strong>Dushyanth</strong>, a student and aspiring developer.</p>
+        
+        <p>
+            🔗 <a href="https://github.com/YOUR_USERNAME/YOUR_REPO" target="_blank" style="color: var(--text-color); text-decoration: underline;">
+                GitHub Repository
+            </a>
+        </p>
+        
+        <div class="modal-buttons">
+            <button id="close-about-modal">Close</button>
+        </div>
+    </div>
+</div>
+
+
+
     <script src="script.js"></script>
 
 </body>

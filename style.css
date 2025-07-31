@@ -43,7 +43,7 @@ nav ul li {
     color: var(--nav-text);
     display: flex;
     align-items: center;
-    gap: 1;
+    gap: 0.2rem;
 }
 
 
@@ -107,6 +107,8 @@ nav ul li img {
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
     background-color: var(--textarea-bg);
     color: var(--text-color);
+    max-width: 70%;
+    min-width: 40%;
 }
 
 #theme-toggle {
@@ -146,6 +148,7 @@ body, .notepad textarea, nav {
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
     text-align: center;
+    
 }
 
 .modal-buttons {
@@ -214,7 +217,7 @@ body, .notepad textarea, nav {
     z-index: 1000;
     min-width: 180px;
     border: 1px solid var(--textarea-border);
-
+    
 
 }
 
@@ -235,4 +238,66 @@ body, .notepad textarea, nav {
 
 .Timer-dropdown:hover .menu-box {
     display: block;
+}
+
+
+
+.timer-countdown {
+   position: fixed;        /* Fix to the viewport */
+    left: 90%;            /* 20px from the right edge */
+    top: 20px;               /* Vertical center */
+    display: flex;
+    gap: 0.5rem;
+    background: var(--nav-bg);
+    padding: 6px 10px;
+    border-radius: 6px;
+    align-items: center;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    
+
+}
+
+#cancelIcon {
+    width: 20px;
+    /* height: 20px; */
+    cursor: pointer;
+}
+
+.timer-countdown p {
+    top: 0;
+    color:var(--nav-text);
+}
+
+.notepad div {
+    justify-content: center;
+    margin-top: 0%;
+}
+
+.timer_with_icon {
+    display: none;
+}
+
+#timer-text-area {
+    display: flex;
+    gap: 0.5rem;
+    
+    
+}
+
+#timer-text-area textarea {
+    color: var(--text-color);
+    background-color: var(--textarea-bg);
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+    resize: none;         
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.modal-content ul {
+    padding-left: 1.2rem;
 }
